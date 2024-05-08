@@ -64,8 +64,13 @@ export default function JwtLoginView() {
       router.push(returnTo || PATH_AFTER_LOGIN);
     } catch (error) {
       console.error(error);
+
+      if (error.mensaje === 'Usuario no encontrado') {
+        setErrorMsg(`${error.mensaje}. Usuario y/o contraseña incorrectos`);
+      } else {
+        setErrorMsg(typeof error === 'string' ? error : error.message);
+      }
       reset();
-      setErrorMsg(typeof error === 'string' ? error : error.message);
     }
   });
 
