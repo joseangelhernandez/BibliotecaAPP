@@ -33,6 +33,9 @@ export function useNavData() {
     ];
 
     if (user?.rol === 0) {
+      if (!items[1]) {
+        items[1] = { items: [] };
+      }
       items[1].items.unshift({
         title: 'Usuarios',
         path: paths.biblioteca.usuarios,
