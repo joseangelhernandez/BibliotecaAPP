@@ -1,3 +1,4 @@
+/* eslint-disable prefer-const */
 import { useState, useEffect, useCallback } from 'react';
 
 import Container from '@mui/material/Container';
@@ -23,6 +24,7 @@ const defaultFilters = {
 
 export default function BibliotecaListView() {
   const [libros, setLibros] = useState([]);
+  const [originalLibrosList, setOriginalLibrosList] = useState([]);
 
   const librosLoading = useBoolean();
 
@@ -33,6 +35,12 @@ export default function BibliotecaListView() {
       librosLoading.onTrue();
       const response = await getInventario();
       setLibros(
+        response.map((libro) => ({
+          ...libro,
+          titulo: libro.libroInfo?.titulo || '',
+        }))
+      );
+      setOriginalLibrosList(
         response.map((libro) => ({
           ...libro,
           titulo: libro.libroInfo?.titulo || '',
@@ -54,25 +62,30 @@ export default function BibliotecaListView() {
   const handleFilters = useCallback(
     (name, value) => {
       if (value === '') {
-        setFilters((prev) => ({
-          ...prev,
-          [name]: value,
+        setFilters(() => ({
+          name: value,
         }));
-        fetchData();
-      } else {
-        setFilters((prev) => ({
-          ...prev,
-          [name]: value,
-        }));
-        const filteredLibros = libros.filter(
-          (libro) =>
-            libro.libroInfo?.autor.toLowerCase().includes(value.toLowerCase()) ||
-            libro.titulo.toLowerCase().includes(value.toLowerCase())
+        setLibros(
+          originalLibrosList.filter(
+            (libro) =>
+              libro.libroInfo?.autor.toLowerCase().includes(value.toLowerCase()) ||
+              libro.titulo.toLowerCase().includes(value.toLowerCase())
+          )
         );
-        setLibros(filteredLibros);
+      } else {
+        setFilters(() => ({
+          name: value,
+        }));
+        setLibros(
+          originalLibrosList.filter(
+            (libro) =>
+              libro.libroInfo?.autor.toLowerCase().includes(value.toLowerCase()) ||
+              libro.titulo.toLowerCase().includes(value.toLowerCase())
+          )
+        );
       }
     },
-    [libros, fetchData]
+    [originalLibrosList]
   );
 
   const notFound = !libros.length && !librosLoading.value;
