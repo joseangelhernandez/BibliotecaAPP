@@ -59,7 +59,7 @@ export default function JwtLoginView() {
 
   const onSubmit = handleSubmit(async (data) => {
     try {
-      await login?.(data.username, data.password);
+      await login?.(data.username.trim(), data.password.trim());
 
       router.push(returnTo || PATH_AFTER_LOGIN);
     } catch (error) {
