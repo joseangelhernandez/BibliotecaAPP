@@ -23,15 +23,15 @@ La aplicación define tres roles principales:
 ## Capturas de Pantalla
 
 1. **Pantalla de Inicio**
-   ![Pantalla de Inicio](https://github.com/tu_usuario/tu_repositorio/public/ReadmeImg/portada-1.png?raw=true)
+   ![Pantalla de Inicio](https://github.com/joseangelhernandez/BibliotecaAPP/public/ReadmeImg/portada-1.png?raw=true)
 2. **Pantalla de Login**
-   ![Pantalla de Login](https://github.com/tu_usuario/tu_repositorio/public/ReadmeImg/portada-2.png?raw=true)
+   ![Pantalla de Login](https://github.com/joseangelhernandez/BibliotecaAPP/public/ReadmeImg/portada-2.png?raw=true)
 3. **Pantalla de Inventario de Libros**
-   ![Pantalla de Inventario de Libros](https://github.com/tu_usuario/tu_repositorio/public/ReadmeImg/protada-3.png?raw=true)
+   ![Pantalla de Inventario de Libros](https://github.com/joseangelhernandez/BibliotecaAPP/public/ReadmeImg/protada-3.png?raw=true)
 4. **Pantalla de Préstamos de Libros**
-   ![Pantalla de Préstamos de Libros](https://github.com/tu_usuario/tu_repositorio/public/ReadmeImg/portada-4.png?raw=true)
+   ![Pantalla de Préstamos de Libros](https://github.com/joseangelhernandez/BibliotecaAPP/public/ReadmeImg/portada-4.png?raw=true)
 5. **Pantalla de Usuarios**
-   ![Pantalla de Usuarios](https://github.com/tu_usuario/tu_repositorio/public/ReadmeImg/portada-5.png?raw=true)
+   ![Pantalla de Usuarios](https://github.com/joseangelhernandez/BibliotecaAPP/public/ReadmeImg/portada-5.png?raw=true)
 
 ## Tecnologías y Herramientas
 
