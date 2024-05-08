@@ -36,6 +36,7 @@ La aplicación define tres roles principales:
 ## Tecnologías y Herramientas
 
 ### Estado Global y Hooks
+Utilizamos toda la librería de MUI - Material UI y estilos de Minimal UI, para la construcción de la UI. De igual forma utilizamos librerías como Framer-motion para darle una mayor experiencia de usuario a nuestras interfaces.
 
 Utilizamos Context API para el manejo global de estados, complementado con algunos hooks personalizados:
 
